@@ -7,8 +7,7 @@ RUN zypper in -y db48-utils pam-extra vsftpd &&\
 
 # Files
 COPY ./root /
-RUN chmod +x /run.sh &&\
-    mkdir -p /etc/vsftpd &&\
+RUN mkdir -p /etc/vsftpd &&\
     mkdir -p /home/vsftpd &&\
 	chown ftp:ftp /home/vsftpd
 

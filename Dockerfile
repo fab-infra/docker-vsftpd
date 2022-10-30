@@ -1,5 +1,5 @@
-# FTP server based on openSUSE Leap 15.3
-FROM ghcr.io/fab-infra/base-image:opensuse15.3
+# FTP server based on openSUSE Leap 15.4
+FROM ghcr.io/fab-infra/base-image:opensuse15.4
 
 # vsFTPd
 RUN zypper in -y db48-utils pam-extra vsftpd &&\

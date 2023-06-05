@@ -13,3 +13,6 @@ RUN mkdir -p /etc/vsftpd &&\
 
 # Ports
 EXPOSE 21 20000-20100
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=5 CMD [ "/healthcheck.sh" ]

@@ -42,6 +42,11 @@ while IFS='=' read -r k v; do
 	fi
 done < <(env | sort)
 
+# Calculate hash of certificate
+if [ -n "$VSFTPD_rsa_cert_file" -a -e "$VSFTPD_rsa_cert_file" ]; then
+	sha1sum "$VSFTPD_rsa_cert_file" > "/tmp/vsftpd_rsa_cert_file.sha1sum"
+fi
+
 # Configure shutdown handler
 trap 'kill $(jobs -p)' SIGINT SIGTERM
 
